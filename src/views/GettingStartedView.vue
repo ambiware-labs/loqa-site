@@ -2,27 +2,33 @@
 const steps = [
   {
     title: 'Install prerequisites',
-    details: 'Go 1.22+, TinyGo 0.39+, and a NATS server with JetStream enabled. The NATS CLI is optional but handy.'
+    description:
+      'Go 1.22+, TinyGo 0.39+, and a NATS server with JetStream enabled. The NATS CLI is optional but handy for testing.',
   },
   {
     title: 'Launch NATS',
-    details:
-      '<code>docker run --rm -p 4222:4222 nats:2.10-alpine -js</code><br />Use Docker or your preferred deployment to expose a NATS server with JetStream.'
+    description: 'Run a local NATS instance with JetStream enabled.',
+    commands: ['docker run --rm -p 4222:4222 nats:2.10-alpine -js'],
   },
   {
     title: 'Clone and prepare',
-    details:
-      '<code>git clone https://github.com/ambiware-labs/loqa-core.git</code><br /><code>cd loqa-core</code><br /><code>make skills</code>'
+    description: 'Clone the runtime repository and build the TinyGo sample skills.',
+    commands: [
+      'git clone https://github.com/ambiware-labs/loqa-core.git',
+      'cd loqa-core',
+      'make skills',
+    ],
   },
   {
     title: 'Run the runtime',
-    details: '<code>make run</code><br />Wraps <code>go run ./cmd/loqad --config ./config/example.yaml</code>. Watch the logs for service startup.'
+    description: 'Launch Loqa with the example configuration. Watch the logs for service startup.',
+    commands: ['make run'],
   },
   {
     title: 'Publish events',
-    details:
-      '<code>nats pub skill.timer.start \'{"\\"duration_ms\\":3000,\\"label\\":\\"tea\\"}\'</code><br />Try `skill.home.command` to exercise the smart home bridge.'
-  }
+    description: 'Trigger the timer skill. Try `skill.home.command` to exercise the smart home bridge.',
+    commands: ["nats pub skill.timer.start '{\"duration_ms\":3000,\"label\":\"tea\"}'"],
+  },
 ]
 </script>
 
@@ -43,7 +49,14 @@ const steps = [
           <span class="font-display text-4xl text-brand-blue">{{ index + 1 }}</span>
           <div>
             <h2 class="font-display text-2xl text-white">{{ step.title }}</h2>
-            <p class="mt-2 text-sm text-white/70">{{ step.details }}</p>
+            <p class="mt-2 text-sm text-white/70">{{ step.description }}</p>
+            <div v-if="step.commands" class="mt-4 space-y-3">
+              <pre
+                v-for="command in step.commands"
+                :key="command"
+                class="rounded-xl bg-black/70 px-4 py-3 text-xs text-brand-blue/90 shadow-inner shadow-black/30"
+              ><code>{{ command }}</code></pre>
+            </div>
           </div>
         </div>
       </li>
