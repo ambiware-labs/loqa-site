@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: only light;
+  }
+
+  body {
+    @apply bg-brand-dark text-white font-sans antialiased min-h-screen;
+    background-image: linear-gradient(180deg, rgba(0, 188, 212, 0.08) 0%, rgba(26, 29, 41, 0.9) 100%);
+  }
+
+  a {
+    @apply text-brand-blue font-medium transition-colors;
+  }
+
+  a:hover {
+    @apply text-brand-gold;
+  }
+}
+
+@layer components {
+  .cta-button {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-blue px-6 py-3 text-brand-dark font-semibold shadow-glow transition-transform hover:-translate-y-0.5 hover:shadow-xl;
+  }
+
+  .cta-button.secondary {
+    @apply bg-transparent border border-white/30 text-white hover:bg-white/10;
+  }
+}
