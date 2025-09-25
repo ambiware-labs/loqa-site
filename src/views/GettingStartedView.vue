@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import CommandSnippet from '../components/CommandSnippet.vue'
 
 interface Step {
   title: string
@@ -39,21 +39,6 @@ const steps: Step[] = [
   },
 ]
 
-const lastCopied = ref<string | null>(null)
-
-const copyCommand = async (command: string) => {
-  try {
-    await navigator.clipboard.writeText(command)
-    lastCopied.value = command
-    setTimeout(() => {
-      if (lastCopied.value === command) {
-        lastCopied.value = null
-      }
-    }, 2000)
-  } catch (error) {
-    console.warn('Failed to copy command:', error)
-  }
-}
 </script>
 
 <template>
@@ -75,47 +60,7 @@ const copyCommand = async (command: string) => {
             <h2 class="font-display text-2xl text-white">{{ step.title }}</h2>
             <p class="mt-2 text-sm text-white/70">{{ step.description }}</p>
             <div v-if="step.commands" class="mt-4 space-y-3">
-              <div
-                v-for="command in step.commands"
-                :key="command"
-                class="relative rounded-xl bg-black/70 px-5 py-4 pr-14 text-xs text-brand-blue/90 shadow-inner shadow-black/30"
-              >
-                <pre class="whitespace-pre-wrap"><code>{{ command }}</code></pre>
-                <button
-                  class="btn-copy"
-                  type="button"
-                  @click="copyCommand(command)"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="h-3.5 w-3.5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M8.25 7.5V6.75C8.25 5.784 9.034 5 10 5h7c.966 0 1.75.784 1.75 1.75v10.5c0 .966-.784 1.75-1.75 1.75H10c-.966 0-1.75-.784-1.75-1.75V16.5"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5.25 8.5c0-.966.784-1.75 1.75-1.75h7c.966 0 1.75.784 1.75 1.75v10.5c0 .966-.784 1.75-1.75 1.75h-7c-.966 0-1.75-.784-1.75-1.75V8.5Z"
-                    />
-                  </svg>
-                  <span class="sr-only">Copy</span>
-                </button>
-                <transition name="fade">
-                  <span
-                    v-if="lastCopied === command"
-                    class="absolute right-14 top-3 rounded-full bg-brand-blue/10 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-brand-blue"
-                  >
-                    Copied
-                  </span>
-                </transition>
-              </div>
+              <CommandSnippet v-for="command in step.commands" :key="command" :command="command" />
             </div>
           </div>
         </div>
@@ -138,31 +83,3 @@ const copyCommand = async (command: string) => {
     </div>
   </section>
 </template>
-
-<style scoped>
-.btn-copy {
-  @apply absolute right-3 top-3 inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 p-2 text-white/80 transition hover:text-white hover:bg-white/20;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-</style>
