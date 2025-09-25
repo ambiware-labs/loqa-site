@@ -26,15 +26,15 @@ export const posts: BlogPost[] = [
   Every inference runs on your hardware. Start with a single Mac mini or NAS, expand across Raspberry Pis or Jetsons, and add skills as
   WASM modules. No silent cloud fallbacks.
 </p>
-<h3>What	33s inside the MVP?</h3>
+<h3>What’s inside the MVP?</h3>
 <ul>
-  <li>Streaming STT → LLM → TTS pipeline using Whisper, a 7	7B planner, and Piper voices</li>
+  <li>Streaming STT → LLM → TTS pipeline using Whisper, a 7B planner, and Kokoro voices</li>
   <li>Deterministic skills runtime with TinyGo reference modules (timer + smart home bridge)</li>
   <li>Observability stack (Grafana, Loki, Tempo, Prometheus) for latency and audit visibility</li>
   <li>Governance + community foundations: Discussions, RFCs, security policy, contribution guide</li>
 </ul>
 <p>
-  We	33re building Loqa in the open. Clone the runtime, run <code>make skills</code> and <code>make run</code>, then start publishing events.
+  We’re building Loqa in the open. Clone the runtime, run <code>make skills</code> and <code>make run</code>, then start publishing events.
   Join us in Discussions to influence the roadmap or contribute new skills.
 </p>
 `
