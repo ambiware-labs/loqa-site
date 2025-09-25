@@ -21,6 +21,7 @@ This site is deployed via GitHub Pages. Pushes to the `main` branch automaticall
 - Documentation links
 - Community resources
 - Blog/updates section
+  - Launch announcement: `blog/2025-09-25-ambiware-labs-loqa.html`
 
 ## Contributing
 
