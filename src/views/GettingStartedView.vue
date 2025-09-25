@@ -6,19 +6,22 @@ const steps = [
   },
   {
     title: 'Launch NATS',
-    details: 'Use Docker (`docker run --rm -p 4222:4222 nats:2.10-alpine -js`) or your preferred deployment.'
+    details:
+      '<code>docker run --rm -p 4222:4222 nats:2.10-alpine -js</code><br />Use Docker or your preferred deployment to expose a NATS server with JetStream.'
   },
   {
     title: 'Clone and prepare',
-    details: 'Clone loqa-core, run `make skills` to build the TinyGo sample modules, and validate their manifests.'
+    details:
+      '<code>git clone https://github.com/ambiware-labs/loqa-core.git</code><br /><code>cd loqa-core</code><br /><code>make skills</code>'
   },
   {
     title: 'Run the runtime',
-    details: 'Execute `make run` (which wraps `go run ./cmd/loqad --config ./config/example.yaml`). Watch the logs for service startup.'
+    details: '<code>make run</code><br />Wraps <code>go run ./cmd/loqad --config ./config/example.yaml</code>. Watch the logs for service startup.'
   },
   {
     title: 'Publish events',
-    details: 'Use `nats pub skill.timer.start ...` to trigger the timer skill or explore `skill.home.command` for the smart home example.'
+    details:
+      '<code>nats pub skill.timer.start \'{"\\"duration_ms\\":3000,\\"label\\":\\"tea\\"}\'</code><br />Try `skill.home.command` to exercise the smart home bridge.'
   }
 ]
 </script>
