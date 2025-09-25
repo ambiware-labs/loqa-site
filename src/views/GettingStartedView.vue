@@ -1,5 +1,13 @@
 <script setup lang="ts">
-const steps = [
+import { ref } from 'vue'
+
+interface Step {
+  title: string
+  description: string
+  commands?: string[]
+}
+
+const steps: Step[] = [
   {
     title: 'Install prerequisites',
     description:
@@ -30,6 +38,22 @@ const steps = [
     commands: ["nats pub skill.timer.start '{\"duration_ms\":3000,\"label\":\"tea\"}'"],
   },
 ]
+
+const lastCopied = ref<string | null>(null)
+
+const copyCommand = async (command: string) => {
+  try {
+    await navigator.clipboard.writeText(command)
+    lastCopied.value = command
+    setTimeout(() => {
+      if (lastCopied.value === command) {
+        lastCopied.value = null
+      }
+    }, 2000)
+  } catch (error) {
+    console.warn('Failed to copy command:', error)
+  }
+}
 </script>
 
 <template>
@@ -51,11 +75,21 @@ const steps = [
             <h2 class="font-display text-2xl text-white">{{ step.title }}</h2>
             <p class="mt-2 text-sm text-white/70">{{ step.description }}</p>
             <div v-if="step.commands" class="mt-4 space-y-3">
-              <pre
+              <div
                 v-for="command in step.commands"
                 :key="command"
-                class="rounded-xl bg-black/70 px-4 py-3 text-xs text-brand-blue/90 shadow-inner shadow-black/30"
-              ><code>{{ command }}</code></pre>
+                class="relative rounded-xl bg-black/70 px-4 py-3 text-xs text-brand-blue/90 shadow-inner shadow-black/30"
+              >
+                <pre class="whitespace-pre-wrap"><code>{{ command }}</code></pre>
+                <button
+                  class="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition hover:bg-white/20"
+                  type="button"
+                  @click="copyCommand(command)"
+                >
+                  <span v-if="lastCopied === command">Copied</span>
+                  <span v-else>Copy</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
