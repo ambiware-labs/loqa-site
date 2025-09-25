@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcing Ambiware Labs & Loqa</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            color: #1f2933;
+            background: #f4f6fb;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        main {
+            max-width: 860px;
+            margin: -3rem auto 4rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+            padding: 3rem;
+        }
+        h1 {
+            margin-bottom: 0.4rem;
+            font-size: 2.6rem;
+        }
+        h2 {
+            margin-top: 2.5rem;
+            color: #4c51bf;
+        }
+        p {
+            margin: 1.2rem 0;
+        }
+        .meta {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.5rem;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        .cta {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(102,126,234,0.12) 0%, rgba(118,75,162,0.18) 100%);
+        }
+        .cta a {
+            color: #4c51bf;
+            font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        a {
+            color: #4c51bf;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 640px) {
+            main {
+                margin: -2rem 1rem 3rem;
+                padding: 2rem;
+            }
+            h1 {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Ambiware Labs + Loqa</h1>
+    <div class="meta">September 25, 2025 • Anna Barnes</div>
+</header>
+<main>
+    <p>
+        Today we are excited to introduce <strong>Ambiware Labs</strong>, the team stewarding <strong>Loqa</strong>—an open-core, local-first ambient intelligence platform. Loqa is our answer to privacy-preserving assistants that can live with you, respond in real time, and never exfiltrate your data to a remote cloud.
+    </p>
+
+    <h2>Why local-first ambient intelligence?</h2>
+    <p>
+        Smart speakers and cloud assistants proved the usefulness of ambient computing, but they also normalized constant data collection. Loqa flips the model by keeping every inference on the hardware you control. A Loqa cluster can start as a single Mac mini or dedicated NAS and scale out across Raspberry Pis, Jetsons, or spare desktops on your network. Add nodes, add skills, without ever sending personal data outside your LAN.
+    </p>
+
+    <h2>The Loqa architecture in brief</h2>
+    <ul>
+        <li><strong>Modular services:</strong> Speech-to-text, LLM orchestration, text-to-speech, and skill execution run as independent services coordinated by NATS.</li>
+        <li><strong>Deterministic skills:</strong> Skills are sandboxed WASM modules with explicit permissions, making it safe to extend Loqa with home automations, media controls, or custom workflows.</li>
+        <li><strong>Open-core roadmap:</strong> The core runtime and tooling are MIT-licensed. Commercial extensions will focus on fleet orchestration, advanced hardware integrations, and managed support.</li>
+        <li><strong>Respectful defaults:</strong> No data leaves your environment unless you opt-in. Audit trails live in your own SQLite/LiteFS event store.</li>
+    </ul>
+
+    <h2>What you can build today</h2>
+    <p>
+        The <a href="https://github.com/ambiware-labs/loqa-core">loqa-core</a> repository already includes:
+    </p>
+    <ul>
+        <li>A voice pipeline with streaming Whisper, an LLM session router, and Piper/Kokoro-based TTS.</li>
+        <li>Sample skills (timer, smart-home bridge) that demonstrate WASM-based extensions and bus interactions.</li>
+        <li>Observability tooling (Grafana + Loki + Tempo + Prometheus) pre-configured via Docker Compose.</li>
+        <li>An evolving plugin/skills runtime with per-skill audit logging and capability enforcement.</li>
+    </ul>
+
+    <h2>How to get involved</h2>
+    <div class="cta">
+        <p>
+            We are actively looking for collaborators, early adopters, and privacy enthusiasts. Here’s how you can help:
+        </p>
+        <ul>
+            <li>Join the conversation in <a href="https://github.com/ambiware-labs/loqa-core/discussions">GitHub Discussions</a> (Announcements, Ideas, Q&amp;A, Show &amp; Tell).</li>
+            <li>Review the <a href="https://github.com/ambiware-labs/loqa-meta/blob/main/roadmap/MVP_BACKLOG.md">MVP backlog</a> and pick an issue—or propose a new skill via the RFC process.</li>
+            <li>Share feedback on device compatibility, latency benchmarks, and ergonomic improvements for local deployments.</li>
+        </ul>
+    </div>
+
+    <h2>What’s next</h2>
+    <p>
+        Over the coming months we’re focusing on governance, community tooling, and the MVP release. Future milestones include:
+    </p>
+    <ul>
+        <li>Hardening the router for fast hand-offs between deterministic skills and the planner LLM.</li>
+        <li>Expanding the skills gallery with community-contributed automations.</li>
+        <li>Publishing progress updates and deep dives into our local-first architecture.</li>
+    </ul>
+
+    <p>
+        Thank you for being part of the journey. Together we can prove that useful ambient intelligence does not require sacrificing privacy.
+    </p>
+
+    <p>
+        — The Ambiware Labs team
+    </p>
+</main>
+<footer>
+    &copy; 2025 Ambiware Labs • <a href="https://ambiware.ai">ambiware.ai</a>
+</footer>
+</body>
+</html>
