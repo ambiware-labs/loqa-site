@@ -37,6 +37,17 @@ const steps: Step[] = [
     description: 'Trigger the timer skill. Try `skill.home.command` to exercise the smart home bridge.',
     commands: ["nats pub skill.timer.start '{\"duration_ms\":3000,\"label\":\"tea\"}'"],
   },
+  {
+    title: 'Exercise the voice pipeline (optional)',
+    description:
+      'Set `stt.enabled`, `llm.enabled`, and `tts.enabled` to true in your config, start the helper processes, then publish a transcript event to simulate speech.',
+    commands: [
+      'python3 stt/faster_whisper.py --model small.en',
+      'ollama serve',
+      'python3 tts/kokoro_stub.py',
+      `nats pub stt.text.final '{"text":"set a five second tea timer"}'`,
+    ],
+  },
 ]
 
 </script>
@@ -72,14 +83,25 @@ const steps: Step[] = [
       <p class="mt-3 text-sm text-white/70">
         The guide covers troubleshooting tips, observability, and more example commands. Open it in a new tab and keep it nearby while you build.
       </p>
-      <a
-        href="https://github.com/ambiware-labs/loqa-core/blob/main/docs/GETTING_STARTED.md"
-        target="_blank"
-        rel="noopener"
-        class="cta-button mt-4 inline-flex"
-      >
-        Read the Quickstart
-      </a>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a
+          href="https://github.com/ambiware-labs/loqa-core/blob/main/docs/GETTING_STARTED.md"
+          target="_blank"
+          rel="noopener"
+          class="cta-button inline-flex"
+        >
+          Read the Quickstart
+        </a>
+        <RouterLink
+          to="/docs"
+          class="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2 text-sm font-medium text-white/70 transition hover:border-brand-blue/40 hover:text-brand-blue"
+        >
+          Browse the docs hub
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </RouterLink>
+      </div>
     </div>
   </section>
 </template>

@@ -8,6 +8,7 @@ const route = useRoute()
 
 const links = [
   { name: 'Home', to: '/' },
+  { name: 'Docs', to: '/docs' },
   { name: 'Getting Started', to: '/getting-started' },
   { name: 'Blog', to: '/blog' }
 ]
