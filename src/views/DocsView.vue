@@ -71,6 +71,28 @@ const sections = [
         href: 'https://github.com/ambiware-labs/loqa-core/blob/main/docs/ARCHITECTURE.md'
       }
     ]
+  },
+  {
+    id: 'business-model',
+    title: 'Hybrid Open-Core Model',
+    summary:
+      'See how Loqa balances a public-good runtime, community-driven extensions, and optional value-add services to stay sustainable.',
+    highlights: [
+      'Core runtime remains MIT-licensed and community governed',
+      'Extension labs and marketplace RFC chart the plugin ecosystem',
+      'Value-add services fund ongoing development without compromising privacy'
+    ],
+    commands: [],
+    links: [
+      {
+        label: 'Read the positioning update',
+        href: 'https://github.com/ambiware-labs/.github'
+      },
+      {
+        label: 'Follow the marketplace RFC',
+        href: 'https://github.com/ambiware-labs/loqa-meta/issues/26'
+      }
+    ]
   }
 ]
 </script>
