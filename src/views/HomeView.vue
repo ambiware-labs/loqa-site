@@ -1,4 +1,22 @@
 <script setup lang="ts">
+const pillars = [
+  {
+    title: 'Public-good core',
+    description: 'The MIT-licensed runtime, skills host, and tooling stay open forever—built in the open for everyone to run locally.',
+    href: 'https://github.com/ambiware-labs/loqa-core'
+  },
+  {
+    title: 'Modular extensibility',
+    description: 'Skills, adapters, and automations plug into Loqa like VS Code extensions or WordPress plugins, ready for community creativity.',
+    href: 'https://github.com/ambiware-labs/loqa-meta/tree/main/community'
+  },
+  {
+    title: 'Value-add ecosystem',
+    description: 'Optional managed services, premium skills, and curated hardware bundles keep the project sustainable without locking down the core.',
+    href: 'https://github.com/ambiware-labs/loqa-meta/issues/25'
+  }
+]
+
 const features = [
   {
     title: 'Local-first by design',
@@ -44,15 +62,19 @@ const roadmap = [
       <div class="absolute inset-0 bg-brand-gradient opacity-60 blur-3xl"></div>
       <div class="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 py-20 md:py-24">
         <div class="max-w-3xl">
-          <span class="rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm uppercase tracking-[0.3em] text-white/70">
-            Ambient intelligence, unplugged from the cloud
+          <span class="inline-flex flex-wrap items-center justify-center gap-1 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/70 sm:px-4 sm:text-sm sm:tracking-[0.3em]">
+            <span>Public-good open core</span>
+            <span class="hidden sm:inline">•</span>
+            <span>Modular</span>
+            <span class="hidden sm:inline">•</span>
+            <span>Value-add ready</span>
           </span>
           <h1 class="mt-6 font-display text-5xl leading-tight text-white md:text-6xl">
             Loqa keeps your AI assistant close to home.
           </h1>
           <p class="mt-5 max-w-2xl text-lg text-white/70 md:text-xl">
-            A local-first, open-core platform for voice assistants and ambient interfaces. Add hardware, add skills, and keep
-            every token inside your network.
+            A local-first, open-core platform for voice assistants and ambient interfaces. We steward a public-good runtime,
+            invite modular extensions, and offer optional value-add services—because privacy shouldn’t cost you flexibility.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
             <RouterLink to="/getting-started" class="cta-button">
@@ -69,10 +91,44 @@ const roadmap = [
       </div>
     </div>
 
+    <div class="border-t border-white/10 bg-black/30">
+      <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <h2 class="font-display text-3xl text-white">Our hybrid open-core model</h2>
+        <p class="mt-3 max-w-3xl text-white/70">
+          Loqa blends the best of Blender, Home Assistant, and OBS. The core stays MIT-licensed, extensions thrive in the
+          ecosystem, and optional services keep the lights on without touching your data.
+        </p>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div
+            v-for="pillar in pillars"
+            :key="pillar.title"
+            class="flex h-full flex-col justify-between rounded-2xl border border-white/5 bg-white/5 p-6 shadow shadow-black/10"
+          >
+            <div class="space-y-4">
+              <h3 class="font-display text-xl text-white">{{ pillar.title }}</h3>
+              <p class="text-sm text-white/70">{{ pillar.description }}</p>
+            </div>
+            <a
+              v-if="pillar.href"
+              :href="pillar.href"
+              class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue hover:text-white"
+              target="_blank"
+              rel="noopener"
+            >
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
       <h2 class="font-display text-3xl text-white">Why Loqa?</h2>
       <p class="mt-3 max-w-2xl text-white/70">
-        Loqa is a full-stack reference for ambient systems. It pairs a fast STT → LLM → TTS pipeline with a deterministic skills runtime so you can ship privacy-first assistants on commodity hardware.
+        Loqa is a full-stack reference for ambient systems. It pairs a fast STT → LLM → TTS pipeline with a deterministic skills runtime so you can ship privacy-first assistants on commodity hardware—and grow into a marketplace of skills without giving up control.
       </p>
       <div class="mt-10 grid gap-8 md:grid-cols-2">
         <div v-for="feature in features" :key="feature.title" class="rounded-2xl border border-white/5 bg-white/5 px-6 py-8 shadow-lg shadow-black/10">
