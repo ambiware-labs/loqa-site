@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import WaveLogo from '../WaveLogo.vue'
+import LoqaGlyph from '../LoqaGlyph.vue'
 
 type LinkTarget = {
   name: string
@@ -72,8 +73,17 @@ const closeMenu = () => {
 <template>
   <header class="sticky top-0 z-50 border-b border-white/10 bg-white/10 backdrop-blur-lg shadow-lg shadow-black/10">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-      <RouterLink to="/" class="inline-flex items-center gap-3" @click="closeMenu">
+      <RouterLink
+        to="/"
+        class="inline-flex items-center gap-3"
+        title="Loqa: Ambient intelligence by Ambiware Labs"
+        @click="closeMenu"
+      >
         <WaveLogo class="h-9 w-auto" />
+        <span class="hidden items-center gap-2 text-xs font-medium uppercase tracking-[0.35em] text-white/60 sm:flex">
+          Home of
+          <LoqaGlyph />
+        </span>
       </RouterLink>
 
       <div class="hidden items-center gap-8 md:flex">

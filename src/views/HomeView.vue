@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import GlyphIcon from '../components/GlyphIcon.vue'
 import PipelineDiagram from '../components/PipelineDiagram.vue'
-import MeshDiagram from '../components/MeshDiagram.vue'
 import StudioModelDiagram from '../components/StudioModelDiagram.vue'
 import StudioFlowDiagram from '../components/StudioFlowDiagram.vue'
 import StudioPackCard from '../components/StudioPackCard.vue'
+import LoqaMark from '../components/LoqaMark.vue'
 import CommandSnippet from '../components/CommandSnippet.vue'
 
 const pillars = [
@@ -86,22 +86,42 @@ const useCases = [
   }
 ]
 
-const roadmap = [
+const meshAreas = [
   {
-    phase: 'Today',
-    items: [
-      'Streaming Whisper STT + Kokoro TTS pipeline',
-      'Skills runtime with timer & smart home reference modules',
-      'CI/CD, security policy, and community infrastructure'
-    ]
+    section: '01',
+    title: 'Sense on the edge',
+    subtitle: 'Lightweight capture + skills',
+    bullets: [
+      'Pi, ESP32, phones publishing events',
+      'Whisper Tiny streaming ASR',
+      'Local automations + sensors'
+    ],
+    href: 'https://github.com/ambiware-labs/loqa-meta/tree/main/community',
+    icon: 'edge'
   },
   {
-    phase: 'Next',
-    items: [
-      'Optimized intent router and deterministic tool chain',
-      'Nightly builds and internal dogfooding cluster',
-      'Alpha tester cohort with guided feedback loop'
-    ]
+    section: '02',
+    title: 'Coordinate in the core',
+    subtitle: 'Loqa runtime + planners',
+    bullets: [
+      'NATS mesh coordinates services',
+      'Planner LLM with deterministic tools',
+      'Observability baked in (Grafana, Loki, Tempo)'
+    ],
+    href: 'https://github.com/ambiware-labs/loqa-core',
+    icon: 'core'
+  },
+  {
+    section: '03',
+    title: 'Enrich with Studio',
+    subtitle: 'Optional personas, cloud, support',
+    bullets: [
+      'Curated persona and skill packs',
+      'Loqa Cloud for encrypted sync',
+      'Support plans and marketplace ecosystem'
+    ],
+    href: 'https://github.com/ambiware-labs/loqa-meta/issues/25',
+    icon: 'studio'
   }
 ]
 
@@ -170,23 +190,18 @@ const samplePack = {
       <div class="absolute inset-0 bg-brand-gradient opacity-70 blur-3xl"></div>
       <div class="absolute -top-40 -right-20 h-80 w-80 rounded-full bg-brand-blue/20 blur-3xl"></div>
       <div class="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 py-20 md:py-24">
-        <div class="max-w-3xl">
-          <span class="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-white/70 sm:text-sm sm:tracking-[0.35em]">
-            <span title="MIT runtime + optional Studio add-ons—no gated core features">Composable Open Core</span>
-            <span class="hidden sm:inline">•</span>
-            <span>Modular</span>
-            <span class="hidden sm:inline">•</span>
-            <span>Ethical by design</span>
-          </span>
-          <h1 class="mt-6 font-display text-4xl leading-tight text-white md:text-6xl">
-            Keep your AI assistant close to home.
+        <div class="max-w-3xl space-y-6">
+          <LoqaMark />
+          <h1 class="font-display text-4xl leading-tight text-white md:text-6xl">
+            An expressive ambient interface for your local life OS.
           </h1>
-          <p class="mt-4 text-xl text-brand-blue/80 md:text-2xl">
-            Ambient intelligence that lives on your hardware, not someone else’s.
+          <p class="text-xl text-brand-blue/80 md:text-2xl">
+            Keep your AI assistant close to home.
           </p>
-          <p class="mt-4 max-w-2xl text-base text-white/70 md:text-lg">
-            Build and adapt your own ambient assistant. Loqa runs locally, stays modular, and invites you to add skills or personas whenever you need them.
+          <p class="max-w-2xl text-base text-white/70 md:text-lg">
+            Loqa runs entirely on your hardware, learns your rhythms, and stays modular so you can add voices, skills, and displays without giving up privacy.
           </p>
+          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-white/50">Built by Ambiware Labs</p>
           <div class="mt-8 flex flex-wrap gap-4">
             <RouterLink to="/getting-started" class="cta-button">
               Try Loqa Alpha
@@ -390,29 +405,55 @@ const samplePack = {
         <p class="mt-3 max-w-2xl text-white/70">
           Scale horizontally as you add roles: keep STT on the edge, run planners on the most capable node, and let skills deploy as WASM bundles wherever capacity exists.
         </p>
-        <MeshDiagram />
-        <div class="mt-12 relative">
-          <div class="absolute left-4 top-0 h-full w-px bg-white/10 md:left-1/2"></div>
-          <div class="space-y-10 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
-            <div
-              v-for="(stage, idx) in roadmap"
-              :key="stage.phase"
-              class="relative rounded-2xl border border-white/5 bg-brand-gradient-soft px-6 py-8 shadow shadow-black/20 md:px-8"
-            >
-              <span
-                class="absolute -left-4 top-6 flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-sm font-semibold text-brand-dark md:-left-6 md:top-1/2 md:-translate-y-1/2"
-              >
-                {{ idx === 0 ? 'T' : 'N' }}
-              </span>
-              <h3 class="text-sm font-semibold uppercase tracking-[0.35em] text-brand-blue">{{ stage.phase }}</h3>
-              <ul class="mt-4 space-y-3 text-white/70">
-                <li v-for="item in stage.items" :key="item" class="flex items-start gap-3">
-                  <span class="mt-1 inline-block h-2 w-2 rounded-full bg-brand-blue"></span>
-                  <span class="text-sm">{{ item }}</span>
-                </li>
-              </ul>
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <component
+            v-for="area in meshAreas"
+            :key="area.title"
+            :is="area.href ? 'a' : 'div'"
+            :href="area.href"
+            :target="area.href ? '_blank' : undefined"
+            :rel="area.href ? 'noopener' : undefined"
+            class="group grid cursor-pointer gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-brand-blue/40 hover:bg-white/10 md:grid-cols-[minmax(0,1fr)_auto]"
+          >
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/15 text-brand-blue">
+                <svg v-if="area.icon === 'edge'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10v5H7z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 16h16" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 19h12" />
+                  <circle cx="8" cy="4" r="1.5" />
+                  <circle cx="16" cy="4" r="1.5" />
+                </svg>
+                <svg v-else-if="area.icon === 'core'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
+                  <rect x="4" y="5" width="16" height="14" rx="2" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 9h8M8 13h6" />
+                  <circle cx="17" cy="13" r="1.5" />
+                </svg>
+                <svg v-else xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 10h10" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 14h8" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 18l2 2 2-2" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue/80">{{ area.section }}</span>
+                <h3 class="mt-2 font-display text-xl text-white">{{ area.title }}</h3>
+                <p class="mt-1 text-sm text-white/60">{{ area.subtitle }}</p>
+                <ul class="mt-4 list-disc list-inside space-y-1 text-sm text-white/70">
+                  <li v-for="bullet in area.bullets" :key="bullet">{{ bullet }}</li>
+                </ul>
+              </div>
             </div>
-          </div>
+            <div class="flex items-center justify-end md:justify-center">
+              <span class="inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition group-hover:text-white">
+                Explore
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 transition group-hover:translate-x-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </component>
         </div>
       </div>
     </div>
@@ -477,6 +518,14 @@ mounts:
             <h3 class="font-display text-xl text-white">{{ card.title }}</h3>
             <p class="mt-3 text-sm text-white/70">{{ card.description }}</p>
           </a>
+        </div>
+        <div class="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 shadow shadow-black/15">
+          <h3 class="font-display text-xl text-white">Loqa × Ambiware Labs</h3>
+          <p class="mt-3 text-sm text-white/70">
+            Loqa is the flagship product of Ambiware Labs—a research collective exploring ethical interfaces and ambient intelligence.
+            Ambiware builds the infrastructure; Loqa brings the expressive, privacy-first experience that lives on your hardware. When you contribute,
+            you help shape both the runtime and the stewardship practices that keep it trustworthy.
+          </p>
         </div>
       </div>
     </div>
