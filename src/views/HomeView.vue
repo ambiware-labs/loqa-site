@@ -145,6 +145,29 @@ const ambientPoints = [
   }
 ]
 
+const ambientComparison = [
+  {
+    label: 'Where it lives',
+    ambient: 'Runs on your hardware and prioritizes local execution.',
+    traditional: 'Cloud-first pipelines with remote dependencies.'
+  },
+  {
+    label: 'How it behaves',
+    ambient: 'Respects presence, silence, and routine—intervenes only when helpful.',
+    traditional: 'Always-on wake words and chatter that compete for attention.'
+  },
+  {
+    label: 'How it scales',
+    ambient: 'Modular skills and swappable services; upgrade one piece at a time.',
+    traditional: 'Locked ecosystems that bundle hardware, software, and data.'
+  },
+  {
+    label: 'Data posture',
+    ambient: 'Opt-in telemetry, no silent exports, encrypted sync when enabled.',
+    traditional: 'Opaque analytics, cross-device tracking, and broad data collection.'
+  }
+]
+
 const communityLinks = [
   {
     title: 'Read the roadmap',
@@ -241,6 +264,35 @@ const samplePack = {
         >
           <h3 class="font-display text-xl text-white">{{ point.title }}</h3>
           <p class="mt-3 text-sm text-white/70">{{ point.description }}</p>
+        </div>
+      </div>
+      <div class="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6 shadow shadow-black/10">
+        <div class="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
+          <div>
+            <h3 class="font-display text-2xl text-white">What ambient intelligence isn’t</h3>
+            <p class="text-sm text-white/60">A quick comparison to traditional voice assistants and cloud-first automations.</p>
+          </div>
+          <div class="hidden text-xs font-semibold uppercase tracking-[0.3em] text-white/40 md:flex md:gap-16">
+            <span>Ambient intelligence</span>
+            <span>Traditional assistants</span>
+          </div>
+        </div>
+        <div class="mt-6 space-y-4">
+          <div
+            v-for="item in ambientComparison"
+            :key="item.label"
+            class="grid gap-3 rounded-xl border border-white/5 bg-white/5 p-4 md:grid-cols-[160px_minmax(0,1fr)_minmax(0,1fr)] md:items-start md:gap-6"
+          >
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">{{ item.label }}</p>
+            <div class="space-y-1 text-sm text-white/70">
+              <span class="inline-block rounded-full bg-brand-blue/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue">Ambient</span>
+              <p>{{ item.ambient }}</p>
+            </div>
+            <div class="space-y-1 text-sm text-white/60">
+              <span class="inline-block rounded-full bg-white/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Traditional</span>
+              <p>{{ item.traditional }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
