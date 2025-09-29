@@ -59,7 +59,7 @@ const steps: Step[] = [
       The full Quickstart lives in the runtime repository, but here&apos;s the short version. Most developers have the pipeline running in under fifteen minutes.
     </p>
 
-    <ol class="mt-10 space-y-6">
+    <ol id="workflows" class="mt-10 space-y-6">
       <li
         v-for="(step, index) in steps"
         :key="step.title"
