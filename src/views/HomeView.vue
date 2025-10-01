@@ -11,17 +11,17 @@ const pillars = [
   {
     title: 'Composable Open Core',
     description: 'The MIT-licensed runtime, skills host, and tooling stay open forever—compose whatever ambient stack you need.',
-    href: 'https://github.com/ambiware-labs/loqa-core'
+    href: 'https://github.com/loqalabs/loqa-core'
   },
   {
     title: 'Modular extensibility',
     description: 'Skills, adapters, and automations plug into Loqa like VS Code extensions or WordPress plugins, ready for community creativity.',
-    href: 'https://github.com/ambiware-labs/loqa-meta/tree/main/community'
+    href: 'https://github.com/loqalabs/loqa-meta/tree/main/community'
   },
   {
     title: 'Loqa Studio add-ons',
     description: 'Optional Studio persona packs, encrypted Loqa Cloud sync, and support plans keep Loqa sustainable without locking anything down.',
-    href: 'https://github.com/ambiware-labs/loqa-meta/issues/25'
+    href: 'https://github.com/loqalabs/loqa-meta/issues/25'
   }
 ]
 
@@ -96,7 +96,7 @@ const meshAreas = [
       'Whisper Tiny streaming ASR',
       'Local automations + sensors'
     ],
-    href: 'https://github.com/ambiware-labs/loqa-meta/tree/main/community',
+    href: 'https://github.com/loqalabs/loqa-meta/tree/main/community',
     icon: 'edge'
   },
   {
@@ -108,7 +108,7 @@ const meshAreas = [
       'Planner LLM with deterministic tools',
       'Observability baked in (Grafana, Loki, Tempo)'
     ],
-    href: 'https://github.com/ambiware-labs/loqa-core',
+    href: 'https://github.com/loqalabs/loqa-core',
     icon: 'core'
   },
   {
@@ -120,7 +120,7 @@ const meshAreas = [
       'Loqa Cloud for encrypted sync',
       'Support plans and marketplace ecosystem'
     ],
-    href: 'https://github.com/ambiware-labs/loqa-meta/issues/25',
+    href: 'https://github.com/loqalabs/loqa-meta/issues/25',
     icon: 'studio'
   }
 ]
@@ -172,25 +172,25 @@ const communityLinks = [
   {
     title: 'Read the roadmap',
     description: 'Track Workstream progress and MVP milestones.',
-    href: 'https://github.com/ambiware-labs/loqa-meta/blob/main/roadmap/MVP_BACKLOG.md',
+    href: 'https://github.com/loqalabs/loqa-meta/blob/main/roadmap/MVP_BACKLOG.md',
     icon: 'roadmap'
   },
   {
     title: 'Contributor guide',
     description: 'Find starter issues, publish skills, or propose an RFC.',
-    href: 'https://github.com/ambiware-labs/loqa-meta/blob/main/community/contributing-guide.md',
+    href: 'https://github.com/loqalabs/loqa-meta/blob/main/community/contributing-guide.md',
     icon: 'guide'
   },
   {
     title: 'Extension Labs',
     description: 'Templates and checklists for building Loqa skills.',
-    href: 'https://github.com/ambiware-labs/loqa-meta/blob/main/community/extension-labs/README.md',
+    href: 'https://github.com/loqalabs/loqa-meta/blob/main/community/extension-labs/README.md',
     icon: 'labs'
   },
   {
     title: 'Partner outreach',
     description: 'Collaborate on hardware kits, courses, or co-marketing.',
-    href: 'https://github.com/ambiware-labs/loqa-meta/blob/main/community/outreach/partner_pipeline.md',
+    href: 'https://github.com/loqalabs/loqa-meta/blob/main/community/outreach/partner_pipeline.md',
     icon: 'partners'
   }
 ]
@@ -232,14 +232,14 @@ const samplePack = {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L21 10.5m0 0l-3.75 3.75M21 10.5H3" />
               </svg>
             </RouterLink>
-            <a href="https://github.com/ambiware-labs/loqa-core" class="cta-button secondary" target="_blank" rel="noopener">
+            <a href="https://github.com/loqalabs/loqa-core" class="cta-button secondary" target="_blank" rel="noopener">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5" />
               </svg>
               <span>View the runtime on GitHub</span>
             </a>
-            <a href="https://github.com/ambiware-labs/loqa-core/blob/main/docs/GETTING_STARTED.md" class="cta-button secondary" target="_blank" rel="noopener">
+            <a href="https://github.com/loqalabs/loqa-core/blob/main/docs/GETTING_STARTED.md" class="cta-button secondary" target="_blank" rel="noopener">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5h7.5m-7.5 0A2.25 2.25 0 006 6.75v10.5A2.25 2.25 0 008.25 19.5h7.5A2.25 2.25 0 0018 17.25V6.75A2.25 2.25 0 0015.75 4.5m-7.5 0V3.75A1.5 1.5 0 019.75 2.25h4.5a1.5 1.5 0 011.5 1.5V4.5" />
               </svg>
@@ -519,7 +519,7 @@ const samplePack = {
         <div class="mt-6 grid gap-6 md:grid-cols-2">
           <div class="space-y-4">
             <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-blue/80">Kickstart commands</h3>
-            <CommandSnippet command="git clone https://github.com/ambiware-labs/loqa-core.git" />
+            <CommandSnippet command="git clone https://github.com/loqalabs/loqa-core.git" />
             <CommandSnippet command="cd loqa-core && make skills && make run" />
           </div>
           <div class="space-y-4">
@@ -538,13 +538,13 @@ mounts:
           </div>
         </div>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="https://github.com/ambiware-labs/loqa-meta/blob/main/roadmap/MVP_BACKLOG.md" class="cta-button secondary" target="_blank" rel="noopener">
+          <a href="https://github.com/loqalabs/loqa-meta/blob/main/roadmap/MVP_BACKLOG.md" class="cta-button secondary" target="_blank" rel="noopener">
             View the MVP backlog
           </a>
-          <a href="https://github.com/ambiware-labs/loqa-core/discussions" class="cta-button" target="_blank" rel="noopener">
+          <a href="https://github.com/loqalabs/loqa-core/discussions" class="cta-button" target="_blank" rel="noopener">
             Join the community
           </a>
-          <a href="https://github.com/ambiware-labs/loqa-meta/blob/main/community/extension-labs/README.md" class="cta-button secondary" target="_blank" rel="noopener">
+          <a href="https://github.com/loqalabs/loqa-meta/blob/main/community/extension-labs/README.md" class="cta-button secondary" target="_blank" rel="noopener">
             Explore Extension Labs
           </a>
         </div>
@@ -588,7 +588,7 @@ mounts:
         <p class="mt-3 max-w-3xl text-white/70">
           Loqa runs locally, ships with zero telemetry, and only syncs to Loqa Cloud when you explicitly opt in. Read the
           <a
-            href="https://github.com/ambiware-labs/loqa-meta/blob/main/governance/privacy.md"
+            href="https://github.com/loqalabs/loqa-meta/blob/main/governance/privacy.md"
             class="text-brand-blue hover:text-white"
             target="_blank"
             rel="noopener"

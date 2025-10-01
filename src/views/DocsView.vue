@@ -20,11 +20,11 @@ const sections = [
     links: [
       {
         label: 'Read the full guide',
-        href: 'https://github.com/ambiware-labs/loqa-core/blob/main/docs/INSTALLATION.md'
+        href: 'https://github.com/loqalabs/loqa-core/blob/main/docs/INSTALLATION.md'
       },
       {
         label: 'Download nightly builds',
-        href: 'https://github.com/ambiware-labs/loqa-core/actions/workflows/nightly.yml'
+        href: 'https://github.com/loqalabs/loqa-core/actions/workflows/nightly.yml'
       }
     ]
   },
@@ -46,7 +46,7 @@ const sections = [
     links: [
       {
         label: 'Open quickstart',
-        href: 'https://github.com/ambiware-labs/loqa-core/blob/main/docs/GETTING_STARTED.md'
+        href: 'https://github.com/loqalabs/loqa-core/blob/main/docs/GETTING_STARTED.md'
       }
     ]
   },
@@ -68,7 +68,7 @@ const sections = [
     links: [
       {
         label: 'View architecture doc',
-        href: 'https://github.com/ambiware-labs/loqa-core/blob/main/docs/ARCHITECTURE.md'
+        href: 'https://github.com/loqalabs/loqa-core/blob/main/docs/ARCHITECTURE.md'
       }
     ]
   },
@@ -86,11 +86,11 @@ const sections = [
     links: [
       {
         label: 'Read the positioning update',
-        href: 'https://github.com/ambiware-labs/.github'
+        href: 'https://github.com/loqalabs/.github'
       },
       {
         label: 'Follow the marketplace RFC',
-        href: 'https://github.com/ambiware-labs/loqa-meta/issues/26'
+        href: 'https://github.com/loqalabs/loqa-meta/issues/26'
       }
     ]
   }
