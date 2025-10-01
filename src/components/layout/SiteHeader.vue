@@ -76,7 +76,7 @@ const closeMenu = () => {
       <RouterLink
         to="/"
         class="inline-flex items-center gap-3"
-        title="Loqa: Ambient intelligence by Ambiware Labs"
+        title="Loqa: Ambient intelligence by Loqa Labs"
         @click="closeMenu"
       >
         <WaveLogo class="h-9 w-auto" />

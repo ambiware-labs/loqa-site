@@ -12,7 +12,7 @@ export const posts: BlogPost[] = [
     slug: 'loqa-hybrid-open-core-model',
     title: 'Loqa’s Hybrid Open-Core Model',
     date: 'September 28, 2025',
-    author: 'Ambiware Labs Team',
+    author: 'Loqa Labs Team',
     excerpt:
       'How we blend a public-good runtime, modular extensions, and optional value-add services to keep Loqa weird, local, and sustainable.',
     content: `
@@ -39,7 +39,7 @@ export const posts: BlogPost[] = [
 
 <h3>Value-add ecosystem</h3>
 <p>
-  To keep the lights on, Ambiware Labs will offer optional services that never compromise privacy: managed updates, premium skill packs,
+  To keep the lights on, Loqa Labs will offer optional services that never compromise privacy: managed updates, premium skill packs,
   and curated hardware bundles. We’re drafting the first wave in
   <a href="https://github.com/loqalabs/loqa-meta/issues/28">our value-add roadmap</a> and laying the groundwork for a
   <a href="https://github.com/loqalabs/loqa-meta/issues/26">marketplace RFC</a> so creators can monetize their skills alongside us.
@@ -54,14 +54,14 @@ export const posts: BlogPost[] = [
   },
   {
     slug: 'loqalabs-loqa-launch',
-    title: 'Announcing Ambiware Labs + Loqa',
+    title: 'Announcing Loqa Labs + Loqa',
     date: 'September 25, 2025',
-    author: 'Ambiware Labs Team',
+    author: 'Loqa Labs Team',
     excerpt:
-      'Introducing Ambiware Labs and Loqa — a local-first, hardware-agnostic platform for private ambient intelligence.',
+      'Introducing Loqa Labs and Loqa — a local-first, hardware-agnostic platform for private ambient intelligence.',
     content: `
 <p>
-  Today we are excited to introduce <strong>Ambiware Labs</strong>, the team stewarding <strong>Loqa</strong>—an open-core, local-first
+  Today we are excited to introduce <strong>Loqa Labs</strong>, the team stewarding <strong>Loqa</strong>—an open-core, local-first
   ambient intelligence platform. Loqa is our answer to privacy-preserving assistants that can live with you, respond in real time, and
   never exfiltrate your data to a remote cloud.
 </p>

@@ -224,7 +224,7 @@ const samplePack = {
           <p class="max-w-2xl text-base text-white/70 md:text-lg">
             Loqa runs entirely on your hardware, learns your rhythms, and stays modular so you can add voices, skills, and displays without giving up privacy.
           </p>
-          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-white/50">Built by Ambiware Labs</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-white/50">Built by Loqa Labs</p>
           <div class="mt-8 flex flex-wrap gap-4">
             <RouterLink to="/getting-started" class="cta-button">
               Try Loqa Alpha
@@ -572,10 +572,10 @@ mounts:
           </a>
         </div>
         <div class="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 shadow shadow-black/15">
-          <h3 class="font-display text-xl text-white">Loqa × Ambiware Labs</h3>
+          <h3 class="font-display text-xl text-white">Loqa × Loqa Labs</h3>
           <p class="mt-3 text-sm text-white/70">
-            Loqa is the flagship product of Ambiware Labs—a research collective exploring ethical interfaces and ambient intelligence.
-            Ambiware builds the infrastructure; Loqa brings the expressive, privacy-first experience that lives on your hardware. When you contribute,
+            Loqa is the flagship product of Loqa Labs—a research collective exploring ethical interfaces and ambient intelligence.
+            Loqa Labs builds the infrastructure; Loqa brings the expressive, privacy-first experience that lives on your hardware. When you contribute,
             you help shape both the runtime and the stewardship practices that keep it trustworthy.
           </p>
         </div>
