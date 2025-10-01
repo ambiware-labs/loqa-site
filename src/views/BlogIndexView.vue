@@ -4,7 +4,7 @@ import { posts } from '../content/blog/posts'
 
 <template>
   <section class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-    <h1 class="font-display text-4xl text-white md:text-5xl">Updates from Ambiware Labs</h1>
+    <h1 class="font-display text-4xl text-white md:text-5xl">Updates from Loqa Labs</h1>
     <p class="mt-4 text-white/70">Launch notes, roadmap milestones, and architecture deep dives.</p>
 
     <div class="mt-10 space-y-6">

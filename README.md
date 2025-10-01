@@ -1,6 +1,6 @@
 # Loqa Site
 
-This repository contains the source for [ambiware.ai](https://ambiware.ai), the public website for Ambiware Labs and the Loqa project. The site is built with Vue 3 (Composition API + TypeScript), Vite, Tailwind CSS, and Vue Router.
+This repository contains the source for [ambiware.ai](https://ambiware.ai), the public website for Loqa Labs and the Loqa project. The site is built with Vue 3 (Composition API + TypeScript), Vite, Tailwind CSS, and Vue Router.
 
 ## Tech Stack
 
@@ -44,7 +44,7 @@ loqa-site/
 
 ## Branding
 
-Tailwind is configured with Ambiware Labs + Loqa brand colors and typography. Global styles live in `src/style.css`, which imports DM Sans and Space Grotesk for headings and UI text.
+Tailwind is configured with Loqa Labs + Loqa brand colors and typography. Global styles live in `src/style.css`, which imports DM Sans and Space Grotesk for headings and UI text.
 
 ## Deployment
 
@@ -63,4 +63,4 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the full guidelines.
 
 ## License
 
-MIT © Ambiware Labs
+MIT © Loqa Labs
