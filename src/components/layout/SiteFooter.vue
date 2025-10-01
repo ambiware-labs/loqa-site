@@ -8,7 +8,7 @@
         </p>
       </div>
       <div class="flex flex-col gap-2 text-sm text-white/60">
-        <a href="https://github.com/ambiware-labs" target="_blank" rel="noopener" class="hover:text-white">GitHub</a>
+        <a href="https://github.com/loqalabs" target="_blank" rel="noopener" class="hover:text-white">GitHub</a>
         <a href="mailto:hello@ambiware.ai" class="hover:text-white">hello@ambiware.ai</a>
         <span class="text-white/40">Loqa is an Ambiware Labs project.</span>
       </div>

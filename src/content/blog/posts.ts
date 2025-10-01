@@ -25,15 +25,15 @@ export const posts: BlogPost[] = [
 <p>
   The Loqa runtime, protocols, skills host, and tooling remain permanently MIT-licensed. Anyone can run, fork, or extend the stack on
   their own hardware—no feature gates, no cloud lock-in. Governance, security policy, and RFCs all live in the open at
-  <a href="https://github.com/ambiware-labs/loqa-meta">loqa-meta</a>.
+  <a href="https://github.com/loqalabs/loqa-meta">loqa-meta</a>.
 </p>
 
 <h3>Modular extensibility</h3>
 <p>
   Skills and adapters behave like VS Code extensions or WordPress plugins. The new
-  <a href="https://github.com/ambiware-labs/loqa-core/blob/main/docs/skills/SPEC.md">skills specification</a> documents the
+  <a href="https://github.com/loqalabs/loqa-core/blob/main/docs/skills/SPEC.md">skills specification</a> documents the
   manifest schema and host ABI so third-party creators can experiment freely. We’re also bootstrapping
-  <a href="https://github.com/ambiware-labs/loqa-meta/issues/27">Extension Labs</a> resources to showcase community work and share
+  <a href="https://github.com/loqalabs/loqa-meta/issues/27">Extension Labs</a> resources to showcase community work and share
   starter kits.
 </p>
 
@@ -41,19 +41,19 @@ export const posts: BlogPost[] = [
 <p>
   To keep the lights on, Ambiware Labs will offer optional services that never compromise privacy: managed updates, premium skill packs,
   and curated hardware bundles. We’re drafting the first wave in
-  <a href="https://github.com/ambiware-labs/loqa-meta/issues/28">our value-add roadmap</a> and laying the groundwork for a
-  <a href="https://github.com/ambiware-labs/loqa-meta/issues/26">marketplace RFC</a> so creators can monetize their skills alongside us.
+  <a href="https://github.com/loqalabs/loqa-meta/issues/28">our value-add roadmap</a> and laying the groundwork for a
+  <a href="https://github.com/loqalabs/loqa-meta/issues/26">marketplace RFC</a> so creators can monetize their skills alongside us.
 </p>
 
 <p>
   This hybrid approach gives Loqa the resilience of Blender, the modular energy of Home Assistant, and the sustainability of OBS +
   Streamlabs—all while staying unapologetically weird. Join the discussion in
-  <a href="https://github.com/ambiware-labs/loqa-core/discussions">GitHub Discussions</a> and help shape what comes next.
+  <a href="https://github.com/loqalabs/loqa-core/discussions">GitHub Discussions</a> and help shape what comes next.
 </p>
 `
   },
   {
-    slug: 'ambiware-labs-loqa-launch',
+    slug: 'loqalabs-loqa-launch',
     title: 'Announcing Ambiware Labs + Loqa',
     date: 'September 25, 2025',
     author: 'Ambiware Labs Team',

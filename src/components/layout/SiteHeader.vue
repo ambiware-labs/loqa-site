@@ -25,10 +25,10 @@ const navMenuSections: NavGroup[] = [
   {
     name: 'Get started',
     items: [
-      { name: 'Quickstart on GitHub', href: 'https://github.com/ambiware-labs/loqa-core/blob/main/docs/GETTING_STARTED.md', external: true },
-      { name: 'Runtime README', href: 'https://github.com/ambiware-labs/loqa-core', external: true },
-      { name: 'Extension Labs', href: 'https://github.com/ambiware-labs/loqa-meta/blob/main/community/extension-labs/README.md', external: true },
-      { name: 'Loqa core discussions', href: 'https://github.com/ambiware-labs/loqa-core/discussions', external: true }
+      { name: 'Quickstart on GitHub', href: 'https://github.com/loqalabs/loqa-core/blob/main/docs/GETTING_STARTED.md', external: true },
+      { name: 'Runtime README', href: 'https://github.com/loqalabs/loqa-core', external: true },
+      { name: 'Extension Labs', href: 'https://github.com/loqalabs/loqa-meta/blob/main/community/extension-labs/README.md', external: true },
+      { name: 'Loqa core discussions', href: 'https://github.com/loqalabs/loqa-core/discussions', external: true }
     ]
   },
   {
@@ -43,8 +43,8 @@ const navMenuSections: NavGroup[] = [
   {
     name: 'Community',
     items: [
-      { name: 'Roadmap', href: 'https://github.com/ambiware-labs/loqa-meta/blob/main/roadmap/MVP_BACKLOG.md', external: true },
-      { name: 'Governance', href: 'https://github.com/ambiware-labs/loqa-meta/tree/main/governance', external: true },
+      { name: 'Roadmap', href: 'https://github.com/loqalabs/loqa-meta/blob/main/roadmap/MVP_BACKLOG.md', external: true },
+      { name: 'Governance', href: 'https://github.com/loqalabs/loqa-meta/tree/main/governance', external: true },
       { name: 'Blog', to: '/blog' },
       { name: 'Docs hub', to: '/docs' }
     ]

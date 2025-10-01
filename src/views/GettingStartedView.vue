@@ -22,7 +22,7 @@ const steps: Step[] = [
     title: 'Clone and prepare',
     description: 'Clone the runtime repository and build the TinyGo sample skills.',
     commands: [
-      'git clone https://github.com/ambiware-labs/loqa-core.git',
+      'git clone https://github.com/loqalabs/loqa-core.git',
       'cd loqa-core',
       'make skills',
     ],
@@ -85,7 +85,7 @@ const steps: Step[] = [
       </p>
       <div class="mt-4 flex flex-wrap gap-3">
         <a
-          href="https://github.com/ambiware-labs/loqa-core/blob/main/docs/GETTING_STARTED.md"
+          href="https://github.com/loqalabs/loqa-core/blob/main/docs/GETTING_STARTED.md"
           target="_blank"
           rel="noopener"
           class="cta-button inline-flex"
